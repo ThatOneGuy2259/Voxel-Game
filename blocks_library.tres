@@ -1,0 +1,78 @@
+[gd_resource type="VoxelBlockyLibrary" load_steps=10 format=3 uid="uid://dfxt86bnmcaho"]
+
+[ext_resource type="Material" uid="uid://qpe4ug4qflre" path="res://textures/minecraft_material.tres" id="1_tc6ed"]
+
+[sub_resource type="VoxelBlockyModelEmpty" id="VoxelBlockyModelEmpty_2vdto"]
+resource_name = "air"
+
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_as7i4"]
+resource_name = "grass"
+material_override_0 = ExtResource("1_tc6ed")
+tile_left = Vector2i(2, 0)
+tile_right = Vector2i(2, 0)
+tile_bottom = Vector2i(1, 0)
+tile_back = Vector2i(2, 0)
+tile_front = Vector2i(2, 0)
+
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_2epao"]
+resource_name = "dirt"
+material_override_0 = ExtResource("1_tc6ed")
+tile_left = Vector2i(1, 0)
+tile_right = Vector2i(1, 0)
+tile_bottom = Vector2i(1, 0)
+tile_top = Vector2i(1, 0)
+tile_back = Vector2i(1, 0)
+tile_front = Vector2i(1, 0)
+
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_inpxe"]
+resource_name = "stone"
+material_override_0 = ExtResource("1_tc6ed")
+tile_left = Vector2i(1, 1)
+tile_right = Vector2i(1, 1)
+tile_bottom = Vector2i(1, 1)
+tile_top = Vector2i(1, 1)
+tile_back = Vector2i(1, 1)
+tile_front = Vector2i(1, 1)
+
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_7iw81"]
+resource_name = "cobblestone"
+material_override_0 = ExtResource("1_tc6ed")
+tile_left = Vector2i(0, 1)
+tile_right = Vector2i(0, 1)
+tile_bottom = Vector2i(0, 1)
+tile_top = Vector2i(0, 1)
+tile_back = Vector2i(0, 1)
+tile_front = Vector2i(0, 1)
+
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_2crbx"]
+resource_name = "sand"
+material_override_0 = ExtResource("1_tc6ed")
+tile_left = Vector2i(3, 0)
+tile_right = Vector2i(3, 0)
+tile_bottom = Vector2i(3, 0)
+tile_top = Vector2i(3, 0)
+tile_back = Vector2i(3, 0)
+tile_front = Vector2i(3, 0)
+
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_8n5d0"]
+resource_name = "gravel"
+material_override_0 = ExtResource("1_tc6ed")
+tile_left = Vector2i(3, 1)
+tile_right = Vector2i(3, 1)
+tile_bottom = Vector2i(3, 1)
+tile_top = Vector2i(3, 1)
+tile_back = Vector2i(3, 1)
+tile_front = Vector2i(3, 1)
+
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_b4xw7"]
+resource_name = "bedrock"
+material_override_0 = ExtResource("1_tc6ed")
+tile_left = Vector2i(2, 1)
+tile_right = Vector2i(2, 1)
+tile_bottom = Vector2i(2, 1)
+tile_top = Vector2i(2, 1)
+tile_back = Vector2i(2, 1)
+tile_front = Vector2i(2, 1)
+
+[resource]
+models = Array[VoxelBlockyModel]([SubResource("VoxelBlockyModelEmpty_2vdto"), SubResource("VoxelBlockyModelCube_as7i4"), SubResource("VoxelBlockyModelCube_2epao"), SubResource("VoxelBlockyModelCube_inpxe"), SubResource("VoxelBlockyModelCube_7iw81"), SubResource("VoxelBlockyModelCube_2crbx"), SubResource("VoxelBlockyModelCube_8n5d0"), SubResource("VoxelBlockyModelCube_b4xw7")])

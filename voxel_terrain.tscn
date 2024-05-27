@@ -1,37 +1,29 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhqaiunj02710"]
+[gd_scene load_steps=7 format=3 uid="uid://dhqaiunj02710"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_aod3y"]
+[ext_resource type="VoxelBlockyLibrary" uid="uid://dfxt86bnmcaho" path="res://blocks_library.tres" id="1_1abry"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r55uu"]
 noise_type = 3
-frequency = 0.0035
 
-[sub_resource type="VoxelGeneratorNoise2D" id="VoxelGeneratorNoise2D_jl7g4"]
+[sub_resource type="VoxelGeneratorNoise" id="VoxelGeneratorNoise_lbaj5"]
 channel = 0
-noise = SubResource("FastNoiseLite_aod3y")
+noise = SubResource("FastNoiseLite_r55uu")
+height_range = 192.0
 
-[sub_resource type="VoxelBlockyModelEmpty" id="VoxelBlockyModelEmpty_4vlyg"]
-
-[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_b8t6n"]
-
-[sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_mb3vp"]
-models = Array[VoxelBlockyModel]([SubResource("VoxelBlockyModelEmpty_4vlyg"), SubResource("VoxelBlockyModelCube_b8t6n")])
-
-[sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_ines2"]
-library = SubResource("VoxelBlockyLibrary_mb3vp")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pvw1"]
-vertex_color_use_as_albedo = true
+[sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_7ftao"]
+library = ExtResource("1_1abry")
 
 [sub_resource type="Environment" id="Environment_3lwfq"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_s30rn"]
 
 [node name="VoxelTerrain" type="VoxelTerrain"]
-generator = SubResource("VoxelGeneratorNoise2D_jl7g4")
-mesher = SubResource("VoxelMesherBlocky_ines2")
-material_override = SubResource("StandardMaterial3D_8pvw1")
+generator = SubResource("VoxelGeneratorNoise_lbaj5")
+mesher = SubResource("VoxelMesherBlocky_7ftao")
+bounds = AABB(-512, 0, -512, 1024, 256, 1024)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.667547, 0.744568, 0, -0.744568, 0.667547, 9.42945e-05, 90.6471, 0)
+transform = Transform3D(-0.978974, 0.00939551, -0.203767, 0, 0.998939, 0.0460602, 0.203983, 0.0450918, -0.977935, 0.149032, 106.482, 0.714796)
 
 [node name="VoxelViewer" type="VoxelViewer" parent="Camera3D"]
 

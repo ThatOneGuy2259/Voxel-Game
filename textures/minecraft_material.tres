@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://qpe4ug4qflre"]
+
+[ext_resource type="Texture2D" uid="uid://dkf3lhiaa8xpm" path="res://textures/atlases/minecraft.png" id="1_of6ss"]
+
+[resource]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_of6ss")
+metallic_specular = 0.0
+texture_filter = 0
+texture_repeat = false

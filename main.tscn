@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyt3uyym02j8r"]
+
+[ext_resource type="VoxelBlockyLibrary" uid="uid://dfxt86bnmcaho" path="res://blocks_library.tres" id="1_7ril4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kwekv"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_pyw1u"]
+sky_material = SubResource("ProceduralSkyMaterial_kwekv")
+
+[sub_resource type="Environment" id="Environment_hxisf"]
+background_mode = 2
+sky = SubResource("Sky_pyw1u")
+tonemap_mode = 2
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6fp1x"]
+noise_type = 3
+
+[sub_resource type="VoxelGeneratorNoise" id="VoxelGeneratorNoise_lu6w5"]
+channel = 0
+noise = SubResource("FastNoiseLite_6fp1x")
+height_range = 192.0
+
+[sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_7ftao"]
+library = ExtResource("1_7ril4")
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hxisf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.26496, 0.424024, 0, 0.848048, 0.529919, -0.5, 0.458924, -0.734431, 0, 0, 0)
+light_energy = 1.25
+shadow_enabled = true
+
+[node name="VoxelTerrain" type="VoxelTerrain" parent="."]
+generator = SubResource("VoxelGeneratorNoise_lu6w5")
+mesher = SubResource("VoxelMesherBlocky_7ftao")
+bounds = AABB(-512, 0, -512, 1024, 256, 1024)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.77948, 0.196579, -0.594784, -1.49012e-08, 0.949486, 0.31381, 0.626427, 0.244609, -0.740105, 0, 127.373, 0)
+
+[node name="VoxelViewer" type="VoxelViewer" parent="Camera3D"]
